@@ -1,0 +1,4 @@
+gateway:
+  url: http://localhost:8888/
+cdn:
+  url: http://localhost:8888/cdn

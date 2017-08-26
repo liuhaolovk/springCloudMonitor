@@ -1,0 +1,23 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: my-web
+  boot:
+    admin:
+      url: http://localhost:8888
+
+            #git:
+            #  uri: https://github.com/eacdy/spring-cloud-study/
+            #  search-paths: config-repo
+            #  username:
+            #  password:
+eureka:
+  instance:
+    lease-expiration-duration-in-seconds: 30  # 续约到期时间（默认90秒）
+    lease-renewal-interval-in-seconds: 10 # 续约更新时间间隔（默认30秒）
+  client:
+    healthcheck:
+      enabled: true	# 开启健康检查（需要spring-boot-starter-actuator依赖）
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

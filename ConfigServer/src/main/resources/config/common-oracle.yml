@@ -1,0 +1,41 @@
+mybatis:
+  config-location: classpath:/mybatis-config.xml
+
+spring:
+  datasource:
+    driverClassName: oracle.jdbc.driver.OracleDriver
+#    url: jdbc:oracle:thin:@10.186.27.132:1521/cpicdb
+    url: jdbc:oracle:thin:@localhost:1521/localcpic
+#    username: oracle
+#    password: oracle$RFV
+    username: scott
+    password: zbs
+    initialSize: 5
+    minIdle: 5
+    maxActive: 200
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000 
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 from dual
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: stat,wall,log4j
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+#    useGlobalDataSourceStat: true
+
+#--redisPoolConfig \u914d\u7f6e\u5f00\u59cb--
+#redis:
+#  cache:
+#    maxIdle: 50
+#    maxTotal: 100
+#    testOnBorrow: true
+#    testOnReturn: false
+#    timeBetweenEvictionRunsMillis: 60000
+#    testWhileIdle: true
+#    jedisClusterNodes: 172.30.105.83:9001,172.30.105.83:9002,172.30.105.83:9003,172.30.105.83:9004,172.30.105.83:9005,172.30.105.83:9006
+#    connectionTimeOut: 3000
+#    soTimeOut: 3000
+#    maxRedirections: 5
